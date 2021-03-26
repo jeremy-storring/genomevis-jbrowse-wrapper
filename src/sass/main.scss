@@ -1,0 +1,34 @@
+// import base - contains global styles, such as resets, typography, colors
+// import vendors
+@import "vendor/toolkit";
+@import "components/container";
+@import "components/navbar";
+
+// import components- contains each self-contained component in its own .scss partial
+
+.jbrowse-wrapper-mount {
+    min-height: 1200px;
+}
+
+.pageContainer {
+    background-color: #252830;
+    min-height: 1050;
+}
+
+.centerText {
+    color: #cfd2da;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.frameContainer {
+    margin: 40px auto;
+    text-align: center;
+
+    #volvox {
+        border-style: solid;
+        text-align: center;
+        width: 1800px;
+        height: 900px;
+    }
+}
