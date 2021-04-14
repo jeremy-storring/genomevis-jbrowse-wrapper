@@ -1,7 +1,7 @@
 /*global $*/
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import VolvoxPage from './pages/VolvoxPage';
+import JbrowsePage from './pages/JbrowsePage';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Container from './components/Container';
 
@@ -15,7 +15,8 @@ class App extends Component {
     return (
       <Router history={hashHistory}>
         <Route path='/' component={Container}>
-          <IndexRoute component={VolvoxPage} />
+          <IndexRoute component={JbrowsePage} />
+          <Route path='library(:sourceID)' component={JbrowsePage} />
         </Route>
       </Router>
     )

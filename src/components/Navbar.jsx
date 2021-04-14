@@ -24,8 +24,8 @@ export default class NavBar extends Component {
                     <div id="navbar" className="navbar-collapse collapse ">
                         <ul className='nav navbar-nav'>
                             <li>
-                                <Link to={'/'}>
-                                    Volvox Data
+                                <Link to={'/bnapus'}>
+                                    Bnapus
                                 </Link>
                             </li>
                         </ul>

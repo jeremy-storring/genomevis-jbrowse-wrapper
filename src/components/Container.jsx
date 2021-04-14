@@ -19,16 +19,15 @@ export default class Container extends Component {
                     <div className="container-fluid">
                         <div className='w-md footer-inner'>
                             <span className="left text-xs-left">
-                                <a className="footer-link" href="mailto:venkat.bandi@usask.ca?subject=Triad Browser Tool&amp;body=Please%20Fill%20">Contact Us</a>
+                                <a className="footer-link" href="mailto:venkat.bandi@usask.ca?subject=JBrowse Tool&amp;body=Please%20Fill%20">Contact Us</a>
                             </span>
                         </div>
                         <div className='w-md footer-inner text-xs-right'>
-                            <span className='m-r'>
-                                Made with <span style={{ "color": '#e25555', 'fontSize': '19px', 'margin': '0px 3px' }}>&hearts;</span> by <a href="https://github.com/jeremy-storring">jeremy-storring</a></span>
+                            <span className='m-r'>HCI Lab, University of Saskatchewan. </span>
                         </div>
                     </div>
                 </footer>
             </div>
         );
     }
-}  
+}
