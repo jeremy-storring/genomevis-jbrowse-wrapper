@@ -1,6 +1,9 @@
 /*global $*/
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import ReactSelect from 'react-select';
+import sourceList from '../sourceList';
+import _ from 'lodash';
+import { browserHistory } from 'react-router';
 
 export default class NavBar extends Component {
 
@@ -9,6 +12,11 @@ export default class NavBar extends Component {
     }
 
     render() {
+
+        const { source = 'brassica-napus' } = this.props;
+
+        const modifiedSourceList = _.map(sourceList, (d, sourceKey) => ({ 'label': d.name, 'value': sourceKey, 'commonName': d.commonName }));
+        const activeSource = _.find(modifiedSourceList, (entry) => entry.value == source);
 
         return (
             <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -23,10 +31,24 @@ export default class NavBar extends Component {
                     </div>
                     <div id="navbar" className="navbar-collapse collapse ">
                         <ul className='nav navbar-nav'>
+                            <li className='navbar-banner'>
+                                GenomeVIS Jbrowse - {activeSource.label + ' (' + activeSource.commonName + ")"}
+                            </li>
+                        </ul>
+
+                        <ul className='nav navbar-nav navbar-right'>
                             <li>
-                                <Link to={'/bnapus'}>
-                                    Bnapus
-                                </Link>
+                                <div className="input-group source-select">
+                                    <span className='inner-span'>Source</span>
+                                    <ReactSelect
+                                        className='select-box'
+                                        value={_.find(modifiedSourceList, (entry) => entry.value == source)}
+                                        options={modifiedSourceList}
+                                        styles={{ option: (styles) => ({ ...styles, color: 'black', textAlign: 'left' }) }}
+                                        onChange={(source) => {
+                                            browserHistory.push('/' + source.value);
+                                        }} />
+                                </div>
                             </li>
                         </ul>
                     </div>

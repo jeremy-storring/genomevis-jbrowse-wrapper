@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './Navbar';
+import JbrowseWraper from './JbrowseWrapper';
 
 export default class Container extends Component {
 
@@ -8,22 +9,22 @@ export default class Container extends Component {
     }
 
     render() {
+
+        const { source = 'brassica-napus' } = this.props.params;
+
         return (
             <div id='app-container'>
-                {/* navbar content , common for entire application */}
-                <NavBar />
-                <div id='container-body'>
-                    {this.props.children}
-                </div>
+                <NavBar source={source} />
+                <JbrowseWraper source={source} />
                 <footer className="footer w-full m-t">
                     <div className="container-fluid">
                         <div className='w-md footer-inner'>
                             <span className="left text-xs-left">
-                                <a className="footer-link" href="mailto:venkat.bandi@usask.ca?subject=JBrowse Tool&amp;body=Please%20Fill%20">Contact Us</a>
+                                <a className="footer-link" href="mailto:venkat.bandi@usask.ca?subject=MCSCANX Synteny Tool&amp;body=Please%20Fill%20">Contact Us</a>
                             </span>
                         </div>
                         <div className='w-md footer-inner text-xs-right'>
-                            <span className='m-r'>HCI Lab, University of Saskatchewan. </span>
+                            <a className="footer-link right" href="http://hci.usask.ca/"> <img src="assets/img/interaction_lab.gif" height="30" /></a>
                         </div>
                     </div>
                 </footer>

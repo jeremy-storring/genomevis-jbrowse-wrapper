@@ -6,10 +6,6 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-body {
-    margin: 0;
-}
-
 article,
 aside,
 details,
@@ -309,8 +305,9 @@ body {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    color: #555;
-    background-color: #fff;
+    color:white;
+    margin: 0;
+    background-color: #252830;
 }
 
 input,

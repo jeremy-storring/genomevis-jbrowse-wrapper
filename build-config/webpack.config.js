@@ -18,6 +18,7 @@ module.exports = {
         contentBase: './dist',
         port: 8080,
         compress: true,
+        historyApiFallback: true,
         watchOptions: {
             ignored: [
                 path.resolve(__dirname, 'dist'),
