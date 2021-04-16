@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ReactSelect from 'react-select';
 import sourceList from '../sourceList';
 import _ from 'lodash';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 export default class NavBar extends Component {
 
@@ -46,7 +46,7 @@ export default class NavBar extends Component {
                                         options={modifiedSourceList}
                                         styles={{ option: (styles) => ({ ...styles, color: 'black', textAlign: 'left' }) }}
                                         onChange={(source) => {
-                                            browserHistory.push('/' + source.value);
+                                            hashHistory.push('/' + source.value);
                                         }} />
                                 </div>
                             </li>
